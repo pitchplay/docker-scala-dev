@@ -9,4 +9,8 @@ RUN wget https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt && \
     chmod +x sbt
 RUN ./sbt -sbt-create -211
 
+# Setup code location
+RUN mkdir -p /root/app
+WORKDIR /root/app
+
 ENTRYPOINT ["/root/sbt"]

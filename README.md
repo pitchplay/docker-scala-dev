@@ -4,6 +4,10 @@ Scala Development
 This docker build creates a base image for running scala/sbt projects
 in conjunction with docker-compose.
 
+Example running w/ PlayFramework:
+
+    docker run -v /local/code:/root/app -p 9000:9000 pitchplay/scala-dev run
+
 Features
 --------
 
