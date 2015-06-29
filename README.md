@@ -16,6 +16,7 @@ Features
 | Base Image   | Uses the base JDK-8 image from the Docker library  |
 | SBT          | Provided by the fantastic [sbt-extras] wrapper     |
 | Scala        | Pre-seeded with Scala 2.11.6                       |
+| Node         | Support for many PlayFramework sbt-web plugins     |
 
 
 [sbt-extras]: https://github.com/paulp/sbt-extras
