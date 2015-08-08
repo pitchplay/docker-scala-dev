@@ -23,3 +23,4 @@ RUN mkdir -p /root/app
 WORKDIR /root/app
 
 ENTRYPOINT ["/root/sbt"]
+CMD ["-h"]
