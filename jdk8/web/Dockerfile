@@ -1,13 +1,6 @@
-# Image: pitchplay/scala-dev
-FROM java:8-jdk
+# web
+FROM pitchplay/scala-dev:jdk8
 MAINTAINER Evan Lowry <evan@pitchplay.io>
-
-WORKDIR /root
-
-# Install SBT
-RUN wget https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt \
-    && chmod +x sbt
-RUN ./sbt -sbt-create -211
 
 # Install Node
 ENV NODE_VERSION 0.12.5
@@ -19,8 +12,8 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
     && npm cache clear
 
 # Setup code location
-RUN mkdir -p /root/app
-WORKDIR /root/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-ENTRYPOINT ["/root/sbt"]
+ENTRYPOINT ["/usr/bin/sbt"]
 CMD ["-h"]
