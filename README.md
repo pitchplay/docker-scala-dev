@@ -6,17 +6,17 @@ in conjunction with docker-compose.
 
 Example running w/ PlayFramework:
 
-    docker run -v /local/code:/root/app -p 9000:9000 pitchplay/scala-dev run
+    docker run -v /local/code:/usr/src/app -p 9000:9000 pitchplay/scala-dev:jdk8-web run
 
-Features
---------
 
-| Feature      | Description                                        |
-| ------------ | -------------------------------------------------- |
-| Base Image   | Uses the base JDK-8 image from the Docker library  |
-| SBT          | Provided by the fantastic [sbt-extras] wrapper     |
-| Scala        | Pre-seeded with Scala 2.11.6                       |
-| Node         | Support for many PlayFramework sbt-web plugins     |
+Supported Tags
+--------------
+
+ Tag          | Description
+ ------------ | ---------------------------------------------------------------------- 
+ jdk8         | Uses the base JDK-8 image from the Docker library, in conjunction with the fantastic [sbt-extras] wrapper
+ jdk8-web     | Support for many PlayFramework sbt-web plugins (via node)
+ jdk8-onbuild | Automatically copies working code into image on creation, for use in CI/CD builds
 
 
 [sbt-extras]: https://github.com/paulp/sbt-extras
